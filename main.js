@@ -5,7 +5,7 @@ console.log('GOOD LUCK 👩‍💻 👨‍💻')
 Usind Map
 Create a function called MultiByNum1OrNum2
 that takes an array of numbers and two numbers as a parameter
-and return a new array after mutiple each elemnt to the num1
+and return a new array after mutiple each element to the num1
 if the module of this elemnt to num1 is 0
 otherwise multiple the elemt to num2
 
@@ -23,9 +23,22 @@ Output =>
 
 */
 
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function MultiByNum1OrNum2(array, num1, num2) {
+  var result = [];
+
+  return array.map(function (element) {
+    if (element % num1 === 0) {
+      result = element * num1;
+      return result
+    } else {
+      result = element * num2
+      return result
+    }
+  })
 }
+
+console.log(MultiByNum1OrNum2([7, 2, 50], 7, 10))
+console.log(MultiByNum1OrNum2([1, 5, 2], 2, 6))
 
 /* Q2:
 Using Filter
@@ -58,9 +71,36 @@ Output =>
 ]
 */
 
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function longerAndYounger(array, num1, num2) {
+  var result = [];
+  result = array.filter(function (element) {
+    return element.name.length > num1 & element.age < num2
+  })
+  return result
 }
+var arrOfObj1 = [{
+    name: "alex",
+    age: 22
+  },
+  {
+    name: "mercer",
+    age: 26
+  },
+  {
+    name: "alice",
+    age: 33
+  },
+  {
+    name: "zaheer",
+    age: 35
+  },
+  {
+    name: "elizabeth",
+    age: 45
+  }
+]
+console.log(longerAndYounger(arrOfObj1, 3, 30))
+console.log(longerAndYounger(arrOfObj1, 4, 30))
 
 /* Q3:
 Using Reduce
@@ -89,10 +129,40 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function nameAndAllFoods(array, num1) {
+  var result = '';
+  result = array.reduce(function (acc, element) {
+    return acc + ", " + element.food
+  }), array[0].food
+  return array[num1].name + ", " + result
 }
+ // the initial value acc taken object that unaccept
+ // i gave to it initial value  acc=array[0].food but still taken object :( 
 
+
+var arrOfObj2 = [{
+    name: "alex",
+    food: "fried chiken"
+  },
+  {
+    name: "mercer",
+    food: "pizaa"
+  },
+  {
+    name: "alice",
+    food: "burger"
+  },
+  {
+    name: "zaheer",
+    food: "hot dog"
+  },
+  {
+    name: "elizabeth",
+    food: "eggs"
+  }
+]
+
+console.log(nameAndAllFoods(arrOfObj2, 3))
 
 /*
 Q4

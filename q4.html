@@ -2,11 +2,41 @@
 <html>
 
 <head>
-	<!-- WRITE YOUR CODE UNDER THIS LINE          -->
+		<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous">
+		</script>
+		<script>
+	$(document).ready(function(){
+		$('#no').click(function(){
+			$('.main').css('background-color','red')
+		})
+		$('#yes').click(function(){
+			$('.main').css('background-color','green')
+		})
+	})
+		</script>
 </head>
 
 <body>
-	<!-- WRITE YOUR CODE UNDER THIS LINE          -->
+
+<div class="main">Main div is here</div>
+ <button id='no' style="background-color: red">red</button>
+ <button id='yes' style="background-color: green">green</button>
+
+
+
+
+
+
+
+
+
+
+
+
+	
 </body>
 
 </html>
